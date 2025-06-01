@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
             message: "Email must be in valid format!"
         }
     },
-    password: {
+    passwordHash: {
         type: String,
         required: true,
     },
