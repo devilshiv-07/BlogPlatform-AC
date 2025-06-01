@@ -8,6 +8,7 @@ This is the backend for the **Personal Blog Platform** built with **Node.js**, *
 
 ## 📁 Folder Structure
 
+```bash
 backend/
 │
 ├── config/ # App config and DB connection
@@ -33,7 +34,7 @@ backend/
 ├── .env # Environment variables (ignored in git)
 ├── .gitignore # Ignored files and folders
 ├── app.js # Entry point of the application
-
+```
 
 ---
 
@@ -62,7 +63,7 @@ git clone https://github.com/devilshiv-07/BlogPlatform-AC.git
 cd backend
 ```
 
-### 2. Clone the repository
+### 2. Install Dependencies
 
 ``` bash
 npm install
@@ -70,10 +71,12 @@ npm install
 
 ### 3. Create a .env file
 
+```bash
 PORT=5000
 MONGODB_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_jwt_key
 NODE_ENV=development
+```
 
 ### 4. Start the server
 
@@ -85,7 +88,7 @@ npm run dev
 ---
 
 
-📌 API Endpoints
+## 📌 API Endpoints
 
 🔐 Auth
 | Method | Endpoint      | Description                |
@@ -104,26 +107,30 @@ npm run dev
 ---
 
 
-🔐 Authentication Flow
+## 🔐 Authentication Flow
 
+```bash
 • JWT is signed on login and stored in a secure HTTP-only cookie.
 • Protected routes use the isVerifiedUser middleware.
 • On each request, the middleware:
   → Reads the cookie
   → Verifies the token
   → Adds req.user with the user payload
+```
 
 
 ---
 
 
-🧪 Error Handling
+## 🧪 Error Handling
 
+```bash
 • All errors are passed to a global error handler middleware.
 • Error responses include:
   → Status code
   → Message
   → Stack trace (in development mode only)
+```
 
 
 ---
