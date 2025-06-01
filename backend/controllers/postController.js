@@ -17,7 +17,7 @@ const createPost = async (req, res, next) => {
   }
 };
 
-const getAllPosts = async (req, res) => {
+const getAllPosts = async (req, res, next) => {
   try {
     const posts = await Post.find().populate('authorId', 'email').sort({ createdAt: -1 });
     

@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 const config = require("../config/config");
@@ -28,14 +28,14 @@ const login = async (req, res, next) => {
 
     if (!user || !(await bcrypt.compare(password, user.passwordHash))) {
         const error = createHttpError(401, "Invalid email or password");
-        next(error);
+        return next(error);
     }
 
-    const token = jwt.sign({ userId: user._id }, config.accessTokenSecret, {
+    const accessToken = jwt.sign({ userId: user._id }, config.accessTokenSecret, {
       expiresIn: '1d',
     });
 
-    res.cookie("accessToken", token, {
+    res.cookie("accessToken", accessToken, {
         maxAge: 1000 * 60 * 60 * 24 * 30,
         httpOnly: true,
         sameSite: "none",

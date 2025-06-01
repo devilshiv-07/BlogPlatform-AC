@@ -17,7 +17,7 @@ const isVerifiedUser = async (req, res, next) => {
             return next(error);
         }
 
-        const user = await User.findById(verifiedUser._id);
+        const user = await User.findById(verifiedUser.userId);
         if(!user) {
             const error = createHttpError(401, "User not exist!");
             return next(error);
