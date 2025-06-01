@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const config = require("./config/config");
+const connectDB = require("./config/database");
 
 // Fetching from config
 const PORT = config.port;
+connectDB();
+
 
 // Middleswares
 app.use(express.json()); // Middleware to parse data to json format
