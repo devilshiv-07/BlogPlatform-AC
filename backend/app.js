@@ -4,10 +4,16 @@ const config = require("./config/config");
 const connectDB = require("./config/database");
 const globalErrorHandler = require("./middlewares/globalErrorHandler");
 const cookieParser = require('cookie-parser');
+const rateLimit = require("express-rate-limit");
+const helmet = require("helmet");
 
 // Fetching from config
 const PORT = config.port;
 connectDB();
+
+// Used for security
+app.use(helmet());
+app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 
 // Middleswares
 app.use(express.json()); // Middleware to parse data to json format
