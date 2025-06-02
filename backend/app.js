@@ -11,7 +11,7 @@ const cors = require("cors");
 // Add this before your routes
 app.use(
   cors({
-    origin: "http://localhost:3000", // allow your frontend dev URL
+    origin: "https://blog-frontend-six-lovat.vercel.app", // allow your frontend dev URL
     credentials: true,               // allow cookies and auth headers
   })
 );
