@@ -11,10 +11,10 @@ export default function PostCard({ post }: PostCardProps) {
       : "Anonymous";
 
   return (
-    <div className="border rounded p-4">
-      <h2 className="text-lg font-bold">{post.title}</h2>
-      <p className="text-sm text-gray-700">{post.content}</p>
-      <p className="text-xs text-gray-500 mt-1">By: {authorEmail}</p>
+    <div className="border border-orange-300 rounded-xl py-4 px-10">
+      <h2 className="text-xl text-orange-300 font-bold">{post.title}</h2>
+      <p className="text-sm mt-1 text-orange-100">{post.content}</p>
+      <p className="text-xs text-[#818181] mt-2">By: {authorEmail}</p>
     </div>
   );
 }

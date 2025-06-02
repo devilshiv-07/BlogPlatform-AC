@@ -1,5 +1,6 @@
 const Post = require('../models/postModel');
 
+
 const createPost = async (req, res, next) => {
   try {
     const { title, content } = req.body;

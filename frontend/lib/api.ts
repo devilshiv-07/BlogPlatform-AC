@@ -29,19 +29,23 @@ export interface Post extends PostData {
   updatedAt: string;
 }
 
+
 // User Endpoints
 
+// login
 export const login = (data: AuthData): Promise<AxiosResponse<{ token: string }>> =>
   api.post("/api/login", data);
-
+// signup
 export const signup = (data: AuthData): Promise<AxiosResponse<{ message: string }>> =>
-  api.post("/api/register", data);
-
+  api.post("/api/signup", data);
+// logout
 export const logout = (): Promise<AxiosResponse<{ message: string }>> =>
   api.post("/api/logout");
 
+
 // Post Endpoints
 
+// createPost
 export const createPost = (data: PostData): Promise<AxiosResponse<{ message: string; post: Post }>> =>
   api.post("/api/post", data);
 

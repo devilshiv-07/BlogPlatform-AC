@@ -17,7 +17,7 @@ const Navbar = () => {
     // check cookie presence
     if (typeof window !== "undefined") {
       const cookies = document.cookie;
-      setIsLoggedIn(cookies.includes("accessToken"));
+      if(cookies) setIsLoggedIn(true);
     }
   }, []);
 
@@ -46,7 +46,7 @@ const Navbar = () => {
       {isLoggedIn ? (
         <button
           onClick={handleLogout}
-          className="hover:bg-orange-300 text-orange-300 hover:text-black rounded-md py-1 px-3"
+          className="hover:bg-orange-300 text-orange-300 hover:text-black rounded-md py-1 px-3 flex items-start"
         >
           Logout
         </button>

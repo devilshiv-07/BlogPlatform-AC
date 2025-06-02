@@ -28,3 +28,7 @@ body {
 .nav {
   box-shadow: 0 0 10px #f8a34f;
 }
+
+.scrollHide::-webkit-scrollbar {
+  display: none;
+}
