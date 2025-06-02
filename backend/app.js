@@ -11,6 +11,7 @@ const helmet = require("helmet");
 const PORT = config.port;
 connectDB();
 
+
 // Used for security
 app.use(helmet());
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
