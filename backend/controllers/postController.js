@@ -7,8 +7,11 @@ const createPost = async (req, res, next) => {
     const post = await Post.create({
       title,
       content,
-      authorId: req.user.userId,
+      authorId: req.user._id,
     });
+
+    // Add post reference to the user's posts array
+    await User.findByIdAndUpdate(req.user._id, { $push: { posts: post._id } });
 
     res.status(201).json(post);
 
