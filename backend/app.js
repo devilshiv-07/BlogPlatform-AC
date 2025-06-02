@@ -6,6 +6,15 @@ const globalErrorHandler = require("./middlewares/globalErrorHandler");
 const cookieParser = require('cookie-parser');
 const rateLimit = require("express-rate-limit");
 const helmet = require("helmet");
+const cors = require("cors");
+
+// Add this before your routes
+app.use(
+  cors({
+    origin: "http://localhost:3000", // allow your frontend dev URL
+    credentials: true,               // allow cookies and auth headers
+  })
+);
 
 // Fetching from config
 const PORT = config.port;

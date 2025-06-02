@@ -5,7 +5,6 @@ import { logout } from "@/lib/api"; // import logout function
 import { useRouter } from "next/navigation";
 import { IoReorderThreeOutline } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
 import Image from "next/image";
 import Icon from "../public/Icon.webp";
 
